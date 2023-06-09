@@ -1,10 +1,20 @@
 import React from "react";
-import Index from './pages/home/Index'
+import Home from './pages/home/Index'
+import Form from "./pages/form";
+import Navbar from "./components/navbar/Index";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
 
   return (
-      <Index/>
+      <>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Form />} />
+      </Routes>
+      </>
   )
 }
 

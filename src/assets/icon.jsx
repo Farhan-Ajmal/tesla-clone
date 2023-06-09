@@ -13,7 +13,7 @@ const LogoSvg = (props) => (
     xmlSpace="preserve"
     {...props}
   >
-    <style type="text/css">{"\n\t.st0{fill:#000;}\n"}</style>
+    <style type="text/css">{`\n\t.st0{fill:${props.logoColor};}\n`}</style>
     <g>
       <path
         className="st0"

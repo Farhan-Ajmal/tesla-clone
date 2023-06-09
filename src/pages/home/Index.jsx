@@ -1,15 +1,10 @@
 import React from "react";
-import Navbar from "../../components/navbar/Index";
 import Products from "../../components/products/Index";
-import Form from "../../components/form";
+import dummyVideo from "../../assets/images/atoms.mp4";
 
 const Index = () => {
   return (
-    <>
-      {/* <Navbar />
-      <Products /> */}
-      <Form />
-    </>
+      <Products />
   );
 };
 

@@ -5,3 +5,10 @@
 html {
   scroll-snap-type: y mandatory;
 }
+
+
+@layer components {
+    .active {
+      width: 300px !important;
+    }
+  }
