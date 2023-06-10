@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
+import { states } from "../../data/statesData";
+import getZipCode from "../getZipCode";
+import { PartnerShipData } from "../../data/partnershipOptionsData";
 function FormModal(props) {
+  const [zipCode, setZipCode] = useState('');
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
-    message: "",
+    partnership: "",
+    state: "",
   });
 
   const handleInputChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setFormValues((values) => ({ ...values, [name]: value }));
+    const zipCode = getZipCode(value.toLowerCase().replace(/\s+/g, ''));
+    setZipCode(zipCode);
   };
 
   const handleFormSubmit = (event) => {
@@ -20,12 +27,12 @@ function FormModal(props) {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 bg-gray-900">
-      <div className="container mx-2 md:mx-0 ">
+      <div className="container mx-2 md:mx-0 mt-4 md:mt-0">
         <div className="grid grid-cols-12">
           <div className="col-span-2 hidden md:block"></div>
           <div className="col-span-12 md:col-span-8 text-center rounded-lg">
             <form
-              className="bg-white shadow-md rounded-lg px-6 md:px-14 pt-6 pb-12 mb-4"
+              className="bg-white shadow-md rounded-lg px-6 md:px-14 pt-1 md:pt-6 pb-2 md:pb-12 mb-4"
               onSubmit={handleFormSubmit}
             >
               <div className="bg-none flex justify-end w-full">
@@ -59,15 +66,49 @@ function FormModal(props) {
                 />
               </div>
               <div className="mb-6">
-                <textarea
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  id="message"
-                  rows={6}
-                  name="message"
-                  value={formValues.message}
+                <select
+                  id="partnership"
+                  name="partnership"
+                  className="shadow border rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                  value={formValues.partnership}
                   onChange={handleInputChange}
-                  placeholder="Message"
-                ></textarea>
+                  required
+                >
+                  <option value="" disabled hidden>
+                    Select Partnership Type
+                  </option>
+                  {PartnerShipData.map((partnership, index) =>
+                    <option key={index} value={partnership.category}>{partnership.category}</option>
+                  )}
+                </select>
+              </div>
+              <div className="mb-6">
+                <select
+                  id="state"
+                  name="state"
+                  className="shadow border rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                  value={formValues.state}
+                  onChange={handleInputChange}
+                  required
+                >
+                  <option className="text-gray-700" value="" disabled hidden>
+                    Select a state
+                  </option>
+                  {states.map((state, index) =>
+                    <option className="text-gray-700" key={index} value={state.name}>{state.name}</option>
+                  )}
+                </select>
+
+              </div>
+              <div className="mb-6">
+                <input
+                  id="zipcode"
+                  type="text"
+                  className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  placeholder="zipcode"
+                  value={zipCode}
+                  readOnly
+                />
               </div>
               <div className="mb-6">
                 <p className="text-[#595959] text-sm">

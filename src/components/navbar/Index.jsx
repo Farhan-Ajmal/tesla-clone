@@ -10,6 +10,7 @@ const Index = () => {
   const [showMenu, setShowMenu] = useState(false);
   const router = useLocation()
   const homeRoute = router.pathname === "/"
+  const charjNetworkRoute = router.pathname === "/the-charj-network"
 
   const navItems = [
     { id: 1, title: "Option 1" },
@@ -31,10 +32,10 @@ const Index = () => {
   return (
     <>
       {/* <div className=""> */}
-      <div className={`${homeRoute ? "text-white" : "text-black"} fixed top-0 z-10 w-full max-w-full flex flex-row justify-between items-center mx-auto px-5 py-3 `}>
+      <div className={`${homeRoute || charjNetworkRoute ? "text-white" : "text-black"} ${charjNetworkRoute && "bg-[#161616]"} ${charjNetworkRoute && "opacity-90"} fixed top-0 z-10 w-full max-w-full flex flex-row justify-between items-center mx-auto px-5 py-3 `}>
         <div className="cursor-pointer">
           <Link to="/">
-          <LogoSvg width="6rem" logoColor={homeRoute ? "#fff" : "#000"}/>
+          <LogoSvg width="6rem" logoColor={homeRoute || charjNetworkRoute ? "#fff" : "#000"}/>
           </Link>
         </div>
         <div className=" flex justify-between">
@@ -51,7 +52,7 @@ const Index = () => {
 
         <div className="flex gap-5 text-[1rem] font-semibold">
           <div className="hidden lg:flex gap-5">
-            <span className="cursor-pointer">Shop</span>
+            <Link to="/the-charj-network" className="cursor-pointer capitalize">The Charj Network</Link>
             <span className="cursor-pointer">Account</span>
           </div>
           <span
