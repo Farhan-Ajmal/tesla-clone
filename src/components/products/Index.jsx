@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "../../assets/images/tesla-model-x.webp";
 import video from "../../assets/images/Electric.webm";
-import dummyVideo from "../../assets/images/atoms.mp4";
+import dummyVideo from "../../assets/images/car-model.mp4";
 import model3 from "../../assets/images/model3.jpg"
 import models from "../../assets/images/models.jpg"
 import modely from "../../assets/images/modely.jpg"
@@ -55,9 +55,9 @@ const Index = () => {
   ];
   return (
     <>
-      {products.map((item) => {
+      {products.map((item, index) => {
         return (
-          <div className="h-[100vh] max-w-screen relative snap-center">
+          <div className="h-[100vh] max-w-screen relative" key={index}>
             <div className="relative flex justify-center items-center h-screen w-full ">
               {item.imgUrl && (
                 <img

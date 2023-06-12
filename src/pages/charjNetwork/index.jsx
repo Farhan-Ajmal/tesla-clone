@@ -21,6 +21,20 @@ function CharjNetwork() {
                     </div>
                 </div>
             </div>
+            <div className="container mx-auto grid grid-cols-1">
+                <div className="col-span-12">
+                    {/* <iframe
+                        src="//player.vimeo.com/video/556701532?autoplay=0&amp;title=0&amp;portrait=0&amp;byline=0&amp;badge=0"
+                        data-aid="VIDEO_IFRAME_RENDERED"
+                        className="x-el x-el-iframe c2-1 c2-2 c2-a c2-b c2-17 c2-c c2-e c2-d c2-18 c2-19 c2-1a c2-1b c2-f c2-1c c2-3 c2-4 c2-5 c2-6 c2-7 c2-8 w-full h-full"
+                        title="Example"
+                        frameBorder="0"
+                        allowFullScreen
+                    ></iframe> */}
+                    <iframe src="//player.vimeo.com/video/556701532?autoplay=0&amp;title=0&amp;portrait=0&amp;byline=0&amp;badge=0" width="100%" height="500">
+                    </iframe>
+                </div>
+            </div>
         </div>
     )
 }

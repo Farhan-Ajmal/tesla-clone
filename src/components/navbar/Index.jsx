@@ -40,9 +40,9 @@ const Index = () => {
         </div>
         <div className=" flex justify-between">
           <span className="hidden lg:flex flex-row gap-3 lg:gap-3 xl:gap-5">
-            {navItems.map((item) => {
+            {navItems.map((item,index) => {
               return (
-                <span className="mx-2 text-[1rem] font-semibold cursor-pointer">
+                <span key={index} className="mx-2 text-[1rem] font-semibold cursor-pointer">
                   {item.title}
                 </span>
               );
