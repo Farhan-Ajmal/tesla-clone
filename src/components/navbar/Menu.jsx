@@ -20,18 +20,18 @@ const Menu = ({ navItems, menuItems, setShowMenu, showMenu }) => {
           />
         </div>
         <div className="flex flex-col gap-6 my-4">
-          {menuItems.map((item) => {
+          {menuItems.map((item,index) => {
             return (
-              <Link to={item.url} className="text-md font-semibold cursor-pointer" onClick={() => setShowMenu(!showMenu)}>
+              <Link key={index} to={item.url} className="text-md font-semibold cursor-pointer" onClick={() => setShowMenu(!showMenu)}>
                 {item.title}
               </Link>
             );
           })}
         </div>
         <div className="flex lg:hidden flex-col gap-6 my-4">
-          {navItems.map((item) => {
+          {navItems.map((item,index) => {
             return (
-              <p className="text-md font-semibold cursor-pointer">
+              <p key={index} className="text-md font-semibold cursor-pointer">
                 {item.title}
               </p>
             );

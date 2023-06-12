@@ -8,7 +8,11 @@ html {
 
 
 @layer components {
-    .active {
-      width: 300px !important;
-    }
+  .active {
+    width: 300px !important;
   }
+}
+
+select:required:invalid {
+  color: gray;
+}
