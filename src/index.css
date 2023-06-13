@@ -16,3 +16,36 @@ html {
 select:required:invalid {
   color: gray;
 }
+
+
+.modal {
+  background-color: white;
+  /* max-width: 400px; */
+  /* padding: 20px; */
+  border-radius: 5px;
+  overflow-y: auto;
+  /* Enable scrolling */
+  /* max-height: 80vh; */
+}
+
+@media (max-width: 1024px) {
+  .modal {
+    max-width: 400px;
+    max-height: 80vh;
+  }
+}
+
+/* .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+} */
+
+/* .modal-body {
+  margin-top: 10px;
+  margin-bottom: 20px;
+} */
+
+

@@ -14,7 +14,7 @@ function CharjNetwork() {
 
                         </div>
                         <div className="container mx-auto flex justify-center">
-                            <p className="w-11/12 lg:w-6/12 text-white text-[#919191] text-lg leading-7">
+                            <p className="w-11/12 lg:w-6/12 text-[#919191] text-lg leading-7">
                                 The Charj Network launch event occured on June 19th 2021 coinciding with the grand opening celebration of the Pride Hartford Travel Center; The First Alternative Fueling Center of Its Kind in the World.  I am proud to have contributed both the 12 Tesla Superchargers at this site as well as two 50kW DC charginger with both CCS1 and CHAdeMO connectors.  We are proud to work with ABB and network parther EVConnect at this critical infrastructure location which enables compliance with the Federal Alternaitive Fuels Corridors Program!  See the news reel of the launch event at the link.
                             </p>
                         </div>

@@ -7,18 +7,23 @@ function Form() {
 
     const openPartner = () => {
         setPartner(true);
+        document.body.style.overflow = "hidden"
     };
 
     const closePartner = () => {
         setPartner(false);
+        document.body.style.overflow = "auto"
+
     };
 
     const openInvest = () => {
         setInvest(true);
+        document.body.style.overflow = "hidden"
     };
 
     const closeInvest = () => {
         setInvest(false);
+        document.body.style.overflow = "auto"
     };
     return (
         <div className="container mx-auto">

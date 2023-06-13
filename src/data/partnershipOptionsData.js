@@ -9,3 +9,15 @@ export const PartnerShipData = [
         category: "Solar Panel",
     },
 ]
+
+export const InvestmentData = [
+    {
+        category: "Cars",
+    },
+    {
+        category: "Charging Stations",
+    },
+    {
+        category: "Solar Panel",
+    },
+]
